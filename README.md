@@ -1,4 +1,4 @@
-# AjTeX
+# TeXSci
 Author: Anamitro Biswas (https://sites.google.com/view/anamitro)
 Email: anamitroappu@gmail.com
 XeLaTeX-based template for scientific publication in Bengali vernacular
