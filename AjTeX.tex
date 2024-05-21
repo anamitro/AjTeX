@@ -1,0 +1,125 @@
+% Template: AjTeX, TeXChand Journal
+% Author: Anamitro Biswas <anamitroappu@gmail.com>
+% Website: https://sites.google.com/view/anamitro
+% Copyright 2024 Anamitro Biswas
+%
+% This work may be distributed and/or modified under the conditions of the LaTeX Project Public License, either version 1.3c of this license or (at your option) any later version.
+% The latest version of this license is in
+%   https://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX version 2024 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Anamitro Biswas.
+%
+% This work consists of the files texchand-journal-tricat.tex
+
+\documentclass[a4paper,11pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{etoolbox}
+\usepackage{picinpar}
+\usepackage{amsthm, amscd}
+\usepackage{fontspec}
+\usepackage{setspace}
+%\usepackage{fancyhdr}
+\usepackage{everyshi}
+\usepackage{pdfpages}
+\usepackage{indentfirst}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[notextcomp]{stix}
+ \usepackage{paracol}
+ \usepackage{stmaryrd}
+ \usepackage{xurl}
+\usepackage[left=1cm, right=1cm, top=2cm, bottom=2cm]{geometry}
+\renewcommand{\refname}{\bn তথ্যসূত্র}
+\newfontfamily\bn{TiroBangla-Regular.ttf}[Script=Bengali]
+\newfontfamily\enit{TiroBangla-Italic.ttf}[Script=Latin]
+\newfontfamily\bnc{Galada-Regular.ttf}[Script=Bengali]
+\setmainfont{TiroBangla-Regular.ttf}
+\makeatletter
+\def\bengalidigits#1{\expandafter\@bengali@digits #1@}
+\def\@bengali@digits#1{%
+  \ifx @#1
+  \else
+    \ifx0#1০\else\ifx1#1১\else\ifx2#1২\else\ifx3#1৩\else\ifx4#1৪\else\ifx5#1৫\else\ifx6#1৬\else\ifx7#1৭\else\ifx8#1৮\else\ifx9#1৯\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
+    \expandafter\@bengali@digits
+  \fi
+}
+\makeatother
+
+\def\bengalinumber#1{\bengalidigits{\number#1}}
+\def\bengalinumeral#1{\bengalinumber{\csname c@#1\endcsname}}
+\makeatletter
+\renewcommand{\thesection}{\bengalinumeral{section}}
+ \renewcommand{\thesubsection}{\thesection-\bengalinumeral{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection-\bengalinumeral{subsubsection}}
+\renewcommand{\thepage}{\bengalinumeral{page}}
+\renewcommand{\theenumi}{\bengalinumeral{enumi}}
+%\renewcommand{\thetheorem}{\bengalinumeral{theorem}}
+\makeatother
+
+
+\newtheorem{thm}{\bnc তত্ত্বাণু}
+\newtheorem{prop}{\bnc প্রস্তাবনা}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{defn}[thm]{\bnc সংজ্ঞা}
+\newtheorem{conj}[thm]{\bnc অনুমান}
+\newtheorem{prob}[prop]{\bnc প্রবলেম}
+\title{{\large Bengali Translations}}
+
+\author{\bn ব্যাকরণ শিঙ্$^\text{\bn ১}$, \bn শ্রীকাক্কেশ্বর কুচ্‌কুচে$^\text{\bn ২}$$^{*}$}
+\date{}
+\begin{document}
+\noindent {\bn\small \TeX{চাঁদ} গবেষণা-পত্রিকা}\hfill     {\small ISSN: }\\
+{\small Vol 14, Issue 1 (2023) 1-13}\hfill  {\small https://doi.org/}
+\centerline{}
+
+\centerline{}
+
+\maketitle
+
+
+\address{$^\text{\bn ১}$}
+\email{\textcolor[rgb]{0.00,0.00,0.84}{anamitroappu@gmail.com}}
+
+\address{$^\text{\bn ২}$ হযবরল}
+%\email{\textcolor[rgb]{0.00,0.00,0.84}{}}
+
+%\dedicatory{This paper is dedicated to Professor ABCD}
+
+%\subjclass[]{}
+
+%\keywords{}
+
+
+$^{*}$ Corresponding author\\
+\vspace*{16pt}\\
+\bn
+  সমযৌক্তিক বীজগণিতের (homological algebra) একটি প্রধান সমস্যা হল এই যে না তো সমস্থিতি গণ (homotopy category) আর না আহৃত গণ (derived category) দ্বিমুখী (abelian), অর্থাৎ যথার্থতার (exactness) সম্যক ধারণাটিই সাধারণ গণের (categories) ক্ষেত্রে অর্থবহ নয়। একটি দুর্বলতর স্থাপত্য এই পরিস্থিতিতে বিশেষ উপকারী প্রমাণিত হয়, তা হল ত্রিকোণিত গণ (triangulated category) যেখানে হ্রস্ব যথার্থ ক্রম (short exact sequences) বিশিষ্ট ত্রিকোণ (distinguished triangles)-এর শ্রেণী দ্বারা প্রতিস্থাপিত হয়ে যায়। অর্থাৎ কিছু স্বতঃসিদ্ধ (axiom) শর্তের ওপর নির্ভর করে গণান্তরসূত্র (functor) $\Sigma:\mathcal{A}\rightarrow\mathcal{A}$-এর জন্য এরূপ ক্রম: $X\rightarrow Y\rightarrow Z\rightarrow \Sigma X$। এই ত্রিকোণগুলি হ্রস্ব যথার্থ ক্রম দ্বারা দীর্ঘ যথার্থ ক্রম তৈরীর সাধারণ ঘটনাকে প্রতিফলিত করে; এবং এর প্রয়োগ সমযৌক্তিক বীজগণিতের বাইরেও বহুদূর বিস্তৃত।
+
+d-ক্যালেবি-য়াউ গণের ক্ষেত্রে অবশ্যম্ভাবী চয়ন হবে $\dim=d$। \cite{DHKK}  দেখায় যে সের কারকের (Serre function) বিশৃঙ্খলার পরিমাপ (entropy) তার মাত্রার সঙ্গে কোনোভাবে সম্পর্কিত।
+
+সের মাত্রার বিভিন্ন দিক নিয়ে বহু অনুমানসাপেক্ষ ধারণা আছে। \cite{EL} এমন পরিস্থিতির বর্ণনা করেছে যেইখানে গতানুগতিকতা (monotonicity) সাধারণতঃ সের মাত্রার জন্য প্রযোজ্য নয়। অবশ্য যে-সব গণের $\underline{S\dim}=\overline{S\dim}$, তাদের জন্য গতানুগতিকতা আশা করা চলতে পারে। অবশ্য তেমন কিছু ইতিমধ্যে প্রমাণিত হয়নি এবং সে-সংক্রান্ত বহু অসমাহিত সমস্যাও আছে, যাদের মধ্যে একটি বিশেষ গুরুত্বপূর্ণ—
+
+\begin{prob}
+\bn $X$ ও $Y$  মসৃণ প্রক্ষিপ্ত বহুবিধেয় (smooth projective variety) যাতে $D^b(\text{coh}~X)$ $D^b(\text{coh}~Y)$-এর অর্ধালম্ব উপাদান। দেখাতে হবে, $\dim X\leq \dim Y$।
+\end{prob}
+
+
+
+ \begin{thebibliography}{99}
+%\bibliographystyle{alpha}
+\bibitem{DHKK} G. Dimitrov, F. Haiden, L. Katzarkov and M. Kontsevich, \textit{Dynamical Systems and Categories} [arXiv:1307.8418v1]
+\bibitem{EL} A. Elagin and V. A. Lunts, \textit{Three notions of dimension for triangulated categories} [arXiv:1901.09461v2]
+\end{thebibliography}
+\end{document}
